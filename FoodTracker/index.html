@@ -32,7 +32,15 @@
         <div class="mdl-layout-spacer"></div>
         <div id="spinner" class="mdl-spinner mdl-js-spinner"></div>
 	<div class="g-signin2" data-onsuccess="onSignIn"></div>
-
+<a href="#" onclick="signOut();">Sign out</a>
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
       </div>
       <div class="mdl-layout--large-screen-only mdl-layout__header-row"></div>
     </header>
