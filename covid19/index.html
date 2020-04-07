@@ -1,0 +1,120 @@
+<html>
+  <head>
+    <title>COVID-19 Started Sooner? Probably not.</title>
+  </head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Week');
+      data.addColumn('number', '2017-18');
+      data.addColumn('number', '2019-20');
+      data.addColumn({type: 'boolean', role: 'certainty'});
+      data.addColumn({type: 'string', role: 'annotation'});
+      data.addColumn({type: 'string', role: 'annotationText'});
+      data.addRows([
+['40', 3022, 2703, true, null, null],
+['41', 3001, 2769, true, null, null],
+['42', 3156, 2976, true, null, null],
+['43', 3279, 2985, true, null, null],
+['44', 3215, 2907, true, null, null],
+['45', 3180, 3062, true, null, null],
+['46', 3315, 3094, true, null, null],
+['47', 3202, 2993, true, 'A', 'Mid-November'],
+['48', 3493, 2974, true, null, null],
+['49', 3528, 3305, true, null, null],
+['50', 3759, 3446, true, null, null],
+['51', 3987, 3343, true, null, null],
+['52', 4418, 3472, true, null, null],
+['1', 5156, 3993, true, null, null],
+['2', 5583, 3984, true, 'B', 'First U.S. death attributed to COVID-19'],
+['3', 5412, 3890, true, null, null],
+['4', 5187, 3719, true, null, null],
+['5', 4877, 3577, true, null, null],
+['6', 4689, 3561, true, null, null],
+['7', 4599, 3497, true, null, null],
+['8', 4426, 3358, true, null, null],
+['9', 4044, 3390, true, null, null],
+['10', 4061, 3404, true, null, null],
+['11', 3853, 3203, true, 'C', 'Social Distancing Starts'],
+['12', 3793, 2500+   22+  23+  10+  82+  44+  63+ 110, true, null, null],
+['13', 3779,        140+ 149+ 236+ 267+ 372+ 445+ 441, true, null, null],
+['14', 3698,        511+ 895+ 884+1169+1161+1320+1212, true, null, null],
+['15', 3590,       1967+2140+2348+2532+2680+2821+3045, false, null, null],
+['16', 3429,       2896+3067+3039+3130+3042+3077+2921, false, null, null],
+['17', 3394,       2858+2722+2595+2408+2229+2064+1837, false, null, null],
+['18', 3198,       1590+1359+1104+1044+ 971+ 909+ 850, false, null, null],
+['19', 3032, null, false, null, null],
+['20', 2955, null, false, null, null],
+['21', 2951, null, false, null, null],
+['22', 2905, null, false, null, null],
+['23', 2908, null, false, null, null],
+['24', 2935, null, false, null, null],
+['25', 2865, null, false, null, null],
+['26', 2868, null, false, null, null],
+['27', 2769, null, false, null, null],
+['28', 2781, null, false, null, null],
+['29', 2706, null, false, null, null],
+['30', 2697, null, false, null, null],
+['31', 2661, null, false, null, null],
+['32', 2673, null, false, null, null],
+['33', 2617, null, false, null, null],
+['34', 2713, null, false, null, null],
+['35', 2630, null, false, null, null],
+['36', 2749, null, false, null, null],
+['37', 2761, null, false, null, null],
+['38', 2819, null, false, null, null],
+['39', 2814, null, false, null, null]
+
+        ]);
+
+        var options = {
+          title: 'Pneumonia+Flu vs. COVID-19',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+<body style="font: 400 16px/24px Roboto,Noto Sans,Noto Sans JP,Noto Sans KR,Noto Naskh Arabic,Noto Sans Thai,Noto Sans Hebrew,Noto Sans Bengali,sans-serif;">
+  <h1>Did COVID-19 appear sooner than January?</h1>
+  <h2>Was it confused with flu data?  Have we already flattened the curve?</h2>
+  <p>Last updated April 6, 2020.</p>
+  <p>There are theories
+    (<a href="https://uncoverdc.com/2020/04/05/could-cdc-data-prove-covid-19-infections-in-november-2019/">1</a>,
+    <a href="https://uncoverdc.com/2020/04/06/the-curve-is-already-flat/">2</a>)
+    going around that COVID-19 has been around since November-December
+    and the current response is an over-reaction to a normal, although
+    severe, Influenza-like illness (ILI).</p>
+  <p>The graph below shows our most recent severe flu season in
+    2017-2018 in blue, where we peaked around 5500 deaths per week for
+    two weeks
+    (<a href="https://www.cdc.gov/flu/weekly/index.htm#s2">CDC</a>)
+    and had a yearly estimated deaths of 61,000 (based on
+    <a href="https://www.cdc.gov/flu/about/burden/index.html">CDC
+    data</a>).</p>
+  <p>It also shows our current flu season in red,
+    with <a href="https://www.cdc.gov/flu/weekly/index.htm#s2">CDC flu
+    data</a> up through week 12 (Mar 22), combined and followed by
+    COVID-19 deaths (Wikipedia) through week 14, and estimated weekly
+    deaths through week 18
+    (<a href="https://covid19.healthdata.org/projections">IHME</a>).
+    Note the strong downward curve on the flu after social-distancing
+    and before the COVID-19 picked up (and assuming all pneumonia and
+    influenza death counts are currently counted as COVID-19
+    deaths).</p>
+  <p>I think it's clearly visible that COVID-19 did not start before
+    January and we did not "already flatten the curve" before starting
+    social distancing.</p>
+    <!--Div that will hold the pie chart-->
+    <div id="curve_chart" style="width: 1000px; height: 600px"></div>
+  </body>
+</html>
