@@ -2,6 +2,16 @@
   <head>
     <title>COVID-19 Started Sooner? Probably not.</title>
     <meta property="og:image" content="https://kenmacleod.github.io/covid19/flu-vs-covid.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
     <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -84,7 +94,10 @@
       }
     </script>
   </head>
-<body style="font: 400 16px/24px Roboto,Noto Sans,Noto Sans JP,Noto Sans KR,Noto Naskh Arabic,Noto Sans Thai,Noto Sans Hebrew,Noto Sans Bengali,sans-serif;">
+  <body style="font: 400 16px/24px Roboto,Noto Sans,Noto Sans JP,Noto Sans KR,Noto Naskh Arabic,Noto Sans Thai,Noto Sans Hebrew,Noto Sans Bengali,sans-serif;">
+    <div class="container">
+      <div class="row">
+	<div class="col-lg-6">
   <h1>Did COVID-19 appear sooner than January?</h1>
   <h2>Was it confused with flu data?  Have we already flattened the curve?</h2>
   <p style="font-size:small; color:gray">Last updated April 6, 2020.</p>
@@ -115,7 +128,12 @@
   <p>I think it's clearly visible that COVID-19 did not start before
     January and we did not "already flatten the curve" before starting
     social distancing.</p>
-    <!--Div that will hold the pie chart-->
-    <div id="curve_chart" style="width: 1000px; height: 600px"></div>
+	</div>
+	<div class="col-lg-6">
+	  <!--Div that will hold the pie chart-->
+	  <div id="curve_chart" class="chart"></div>
+	</div>
+      </div>
+    </div>
   </body>
 </html>
