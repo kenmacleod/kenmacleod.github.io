@@ -26,79 +26,91 @@
       data.addColumn({type: 'string', role: 'annotation'});
       data.addColumn({type: 'string', role: 'annotationText'});
       data.addColumn('number', 'COVID-19');
+      data.addColumn('number', 'IHME');
+      data.addColumn({type: 'boolean', role: 'certainty'});
+      data.addColumn('number', 'MIT');
       data.addColumn({type: 'boolean', role: 'certainty'});
       data.addRows([
-['40', 3022, 2703, null, null, null, true],
-['41', 3001, 2769, null, null, null, true],
-['42', 3156, 2976, null, null, null, true],
-['43', 3279, 2985, null, null, null, true],
-['44', 3215, 2907, null, null, null, true],
-['45', 3180, 3062, null, null, null, true],
-['46', 3315, 3094, null, null, null, true],
-['47', 3202, 2993, 'A', 'Mid-November', null, true],
-['48', 3493, 2974, null, null, null, true],
-['49', 3528, 3307, null, null, null, true],
-['50', 3759, 3452, null, null, null, true],
-['51', 3987, 3350, null, null, null, true],
-['52', 4418, 3482, null, null, null, true],
-['1', 5156, 4011, null, null, null, true],
-['2', 5583, 4007, 'B', 'First U.S. death attributed to COVID-19', null, true],
-['3', 5412, 3913, null, null, null, true],
-['4', 5187, 3755, null, null, null, true],
-['5', 4877, 3626, null, null,   0, true], // Jan 26- 1
-['6', 4689, 3624, null, null,   0, true], // Feb  2- 8
-['7', 4599, 3627, null, null,   0, true], // Feb  9-15
-['8', 4426, 3480, null, null,   0, true], // Feb 16-22
-['9', 4044, 3501, null, null,   5, true], // Feb 23-29
-['10', 4061, 3590, null, null, 20, true], // Mar  1- 7
-['11', 3853, 3553, 'C', 'Social Distancing Starts', 44, true], // Mar  8-14
+['40', 3022, 2703, null, null, null, null, true, null, true],
+['41', 3001, 2769, null, null, null, null, true, null, true],
+['42', 3156, 2976, null, null, null, null, true, null, true],
+['43', 3279, 2985, null, null, null, null, true, null, true],
+['44', 3215, 2907, null, null, null, null, true, null, true],
+['45', 3180, 3062, null, null, null, null, true, null, true],
+['46', 3315, 3094, null, null, null, null, true, null, true],
+['47', 3202, 2993, 'A', 'Mid-November', null, null, true, null, true],
+['48', 3493, 2974, null, null, null, null, true, null, true],
+['49', 3528, 3307, null, null, null, null, true, null, true],
+['50', 3759, 3452, null, null, null, null, true, null, true],
+['51', 3987, 3350, null, null, null, null, true, null, true],
+['52', 4418, 3482, null, null, null, null, true, null, true],
+['1', 5156, 4011, null, null, null, null, true, null, true],
+['2', 5583, 4007, 'B', 'First U.S. death attributed to COVID-19', null, null, true, null, true],
+['3', 5412, 3913, null, null, null, null, true, null, true],
+['4', 5187, 3755, null, null, null, null, true, null, true],
+['5', 4877, 3626, null, null,   0, null, true, null, true], // Jan 26- 1
+['6', 4689, 3624, null, null,   0, null, true, null, true], // Feb  2- 8
+['7', 4599, 3627, null, null,   0, null, true, null, true], // Feb  9-15
+['8', 4426, 3480, null, null,   0, null, true, null, true], // Feb 16-22
+['9', 4044, 3501, null, null,   5, null, true, null, true], // Feb 23-29
+['10', 4061, 3590, null, null, 20, null, true, null, true], // Mar  1- 7
+['11', 3853, 3553, 'C', 'Social Distancing Starts', 44, null, true, null, true], // Mar  8-14
 // https://www.timeanddate.com/calendar/?year=2020&country=1&wno=1
 // https://en.wikipedia.org/wiki/Template:2019%E2%80%9320_coronavirus_pandemic_data/United_States_medical_cases
 // https://www.cdc.gov/nchs/nvss/vsrr/covid19/index.htm
 // https://www.thenewatlantis.com/publications/not-like-the-flu-not-like-car-crashes-not-like
-['12', 3793, 3947, null, null,    6+  14+  21+  26+  52+  55+  68, true], // Mar 15-21
-['13', 3779, 5016, null, null,  110+ 111+ 162+ 225+ 253+ 433+ 447, true], // Mar 22-28
-['14', 3698, 6017, null, null,  392+ 554+ 821+ 940+1075+1186+1352, true], // Mar 29- 4
-['15', 3590, null, null, null, 1175+1212+1928+1936+1856+2078+1890, true], // Apr  5-11
-['16', 3429, null, null, null, 1493+1462+2378+2438+2141+2080+1743, true], // Apr 12-18
-['17', 3394, null, null, null, 2159+2107+2037+1950+1850+1738+1615, false],// Apr 19-25
-['18', 3198, null, null, null, 1486+1355+1224+1097+ 973+ 855+ 744, false],// Apr 26- 2
-['19', 3032, null, null, null,  643+ 550+ 468+ 396+ 333+ 279+ 233, false],// May  3- 9
+// https://nextstrain.org/ncov/global
+// https://covid19-projections.com/
+['12', 3793, 3947, null, null,    6+  14+  21+  26+  52+  55+  68, null, true, null, true], // Mar 15-21
+['13', 3779, 5016, null, null,  110+ 111+ 162+ 225+ 253+ 433+ 447, null, true, null, true], // Mar 22-28
+['14', 3698, 6017, null, null,  392+ 554+ 821+ 940+1075+1186+1352, null, true, null, true], // Mar 29- 4
+['15', 3590, null, null, null, 1175+1212+1928+1936+1856+2078+1890, null, true, null, true], // Apr  5-11
+['16', 3429, null, null, null, 1493+1462+2378+2438+2141+2080+1743, null, true, null, true], // Apr 12-18
+['17', 3394, null, null, null, 1634+1643+2624+2119+1840+2053+1854, 1634+1643+2624+2119+1840+2053+1854, false, 1634+1643+2624+2119+1840+2053+1854, false], // Apr 19-25
+['18', 3198, null, null, null, null, 1168+1355+1224+1097+ 973+ 855+ 744, false,
+      1982+1950+1917+1888+1854+1822+1792, false],// Apr 26- 2
+      ['19', 3032, null, null, null, null,  643+ 550+ 468+ 396+ 333+ 279+ 233, false,
+      1756+1727+1693+1658+1627+1599+1566, false],// May  3- 9
 
-//['12', 3793, 2500+   22+  23+  10+  82+  44+  63+ 110, true], // Mar 15-21
-//['13', 3779,        140+ 149+ 236+ 267+ 372+ 445+ 441, true], // Mar 22-28
-//['14', 3698,        511+ 895+ 884+1169+1161+1320+1212, true], // Mar 29- 4
-//['15', 3590,       1967+2140+2348+2532+2680+2821+3045, false],// Apr  5-11
-//['16', 3429,       2896+3067+3039+3130+3042+3077+2921, false],// Apr 12-18
-//['17', 3394,       2858+2722+2595+2408+2229+2064+1837, false],// Apr 19-25
-//['18', 3198,       1590+1359+1104+1044+ 971+ 909+ 850, false],// Apr 26- 2
-['20', 2955, null, null, null, null, false],
-['21', 2951, null, null, null, null, false],
-['22', 2905, null, null, null, null, false],
-['23', 2908, null, null, null, null, false],
-['24', 2935, null, null, null, null, false],
-['25', 2865, null, null, null, null, false],
-['26', 2868, null, null, null, null, false],
-['27', 2769, null, null, null, null, false],
-['28', 2781, null, null, null, null, false],
-['29', 2706, null, null, null, null, false],
-['30', 2697, null, null, null, null, false],
-['31', 2661, null, null, null, null, false],
-['32', 2673, null, null, null, null, false],
-['33', 2617, null, null, null, null, false],
-['34', 2713, null, null, null, null, false],
-['35', 2630, null, null, null, null, false],
-['36', 2749, null, null, null, null, false],
-['37', 2761, null, null, null, null, false],
-['38', 2819, null, null, null, null, false],
-['39', 2814, null, null, null, null, false]
+      ['20', 2955, null, null, null, null, null, false,
+      1537+1508+1474+1449+1424+1399+1372, false],
+      ['21', 2951, null, null, null, null, null, false,
+      1347+1321+1299+1274+1250+1226+1203, false],
+      ['22', 2905, null, null, null, null, null, false,
+      1181+1160+1143+1119+1100+1079+1063, false],
+      ['23', 2908, null, null, null, null, null, false,
+      1045+1027+1007+990+973+953+939, false],
+      ['24', 2935, null, null, null, null, null, false,
+      922+907+894+875+860+845+835, false],
+      ['25', 2865, null, null, null, null, null, false,
+      820+806+792+778+767+758+751, false],
+      ['26', 2868, null, null, null, null, null, false,
+      749+747+747+744+747+747+753, false],
+      ['27', 2769, null, null, null, null, null, false,
+      756+754+757+757+759+763+765, false],
+      ['28', 2781, null, null, null, null, null, false,
+      769+770+773+775+778+782+782, false],
+      ['29', 2706, null, null, null, null, null, false,
+      784+789+793+796+799+803+806, false],
+      ['30', 2697, null, null, null, null, null, false,
+      815+819+824+830+835+841+846, false],
+      ['31', 2661, null, null, null, null, null, false,
+      852+858+866+873+880+890+894, false],
+['32', 2673, null, null, null, null, null, false, null, false],
+['33', 2617, null, null, null, null, null, false, null, false],
+['34', 2713, null, null, null, null, null, false, null, false],
+['35', 2630, null, null, null, null, null, false, null, false],
+['36', 2749, null, null, null, null, null, false, null, false],
+['37', 2761, null, null, null, null, null, false, null, false],
+['38', 2819, null, null, null, null, null, false, null, false],
+['39', 2814, null, null, null, null, null, false, null, false]
 
         ]);
 
         var options = {
           title: 'Pneumonia vs. COVID-19 Deaths per Week',
           curveType: 'function',
-          legend: { position: 'bottom' },
+          legend: { position: 'top', maxLines: 5 },
           vAxis: {
             title: 'Deaths per Week',
             viewWindowMode: 'explicit',
@@ -119,30 +131,40 @@
     <div class="container">
       <div class="row">
 	<div class="col-lg-6">
-  <h1>Did COVID-19 appear sooner than January?</h1>
+  <h1>Did COVID&#x2011;19 appear sooner than January?</h1>
   <h2>Was it confused with flu data?  Have we already flattened the curve?</h2>
   <p style="font-size:small; color:gray">Updated April
-    19, 2020.</p>
-  <p><strong>Update 2020-04-19:</strong> Graph data updated for week
-  16 actual deaths.  Overall estimates remain around 60K deaths.
-  Separated 2019-2020 ILI data from COVID-19 in graph.</p>
-  <p><strong>Update 2020-04-12:</strong> Graph data updated for week
-  15 actual and estimated deaths.  Overall estimates have lowered to
-  60K deaths (from 100-250K) through August.
+    26, 2020.</p>
+  <p><strong>Update 2020-04-26:</strong> Graph data updated for week
+  17 actual deaths.  Separated IHME and
+  added <a href="https://covid19-projections.com/">covid19-projections.com</a>
+  (MIT) projections. IHME estimates are up a little to 68K deaths
+  (mean) by Aug&nbsp;4.  COVID&#x2011;19 Projections are 156K (mean) by
+  Aug&nbsp;4.  New information on "when did COVID&#x2011;19 appear" is
+  available from <a href="https://nextstrain.org/ncov/global">the
+  Nexstrain team</a> showing only a handful of cases in January that
+  match the COVID&#x2011;19 genome.</p>
+  <p><strong>Update 2020-04-19:</strong> Graph data updated for
+  week&nbsp;16 actual deaths.  Overall estimates remain around 60K
+  deaths.  Separated 2019-2020 ILI data from COVID&#x2011;19 in
+  graph.</p>
+  <p><strong>Update 2020-04-12:</strong> Graph data updated for
+  week&nbsp;15 actual and estimated deaths.  Overall estimates have
+  lowered to 60K deaths (from 100-250K) through August.
   <p><strong>Update 2020-04-08:</strong>
     <a href="https://www.cdc.gov/coronavirus/2019-ncov/covid-data/pdf/covidview.pdf">CDC
     COVIDView Week 13, ending March 28, 2020 (PDF)</a> describes
-    seeing the COVID-19 symptoms back in November-December, but
-    doesn't explain the increase in cases starting week 13 (it
+    seeing the COVID&#x2011;19 symptoms back in November-December, but
+    doesn't explain the increase in cases starting week&nbsp;13 (it
     actually started earlier, but not where it would be from
     Nov-Dec).</p>  <br />
   <p>There are theories
     (<a href="https://uncoverdc.com/2020/04/05/could-cdc-data-prove-covid-19-infections-in-november-2019/">1</a>,
     <a href="https://uncoverdc.com/2020/04/06/the-curve-is-already-flat/">2</a>)
-    going around that COVID-19 has been around since November-December
-    (marked "A" on the chart) and the current response is an
-    over-reaction to a normal, although severe, Influenza-like illness
-    (ILI).</p>
+    going around that COVID&#x2011;19 has been around since
+    November-December (marked "A" on the chart) and the current
+    response is an over-reaction to a normal, although severe,
+    Influenza-like illness (ILI).</p>
   <p>The graph below shows our most recent severe flu season in
     2017-2018 in blue, where we peaked around 5500 deaths per week for
     two weeks
@@ -153,15 +175,15 @@
   <p>It also shows our current flu season in red,
     with <a href="https://www.cdc.gov/flu/weekly/index.htm#s2">CDC flu
     data</a> up through week 12 (Mar 22), combined and followed by
-    COVID-19 deaths
+    COVID&#x2011;19 deaths
     (<a href="https://en.wikipedia.org/wiki/Template:2019%E2%80%9320_coronavirus_pandemic_data/United_States_medical_cases">Wikipedia</a>)
     through week 16, and estimated weekly deaths through week 19
     (<a href="https://covid19.healthdata.org/projections">IHME</a>).
     Social-distancing recommendations announced March 13 (marked
     "C").</p>
-  <p>I think it's clearly visible that COVID-19 did not start before
-    January and we did not "already flatten the curve" before starting
-    social distancing.</p>
+  <p>I think it's clearly visible that COVID&#x2011;19 did not start
+    before January and we did not "already flatten the curve" before
+    starting social distancing.</p>
 	</div>
 	<div class="col-lg-6">
 	  <!--Div that will hold the pie chart-->
